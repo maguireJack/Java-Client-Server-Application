@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb4167d7-43c7-4f99-a63a-6f9e9d6d16e5" name="Default Changelist" comment="" />
+    <list default="true" id="cb4167d7-43c7-4f99-a63a-6f9e9d6d16e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toll-Events.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlTollEventDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlVehicleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/MainApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlDao.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +43,12 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jmagu\Desktop\gd2CA5_TollBoothApplication" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -44,6 +61,26 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dkit.maguireJack.Toll.MainApp" />
+      <module name="gd2CA5_TollBoothApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dkit.maguireJack.Toll.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainApp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -63,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582818584924</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added MySql Dao">
+      <created>1582818685641</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582818685641</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -71,7 +115,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

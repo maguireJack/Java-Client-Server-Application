@@ -17,7 +17,7 @@ public class MySqlDao
     public Connection getConnection() throws DaoException
     {
         String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/gd2_database";
+        String url = "jdbc:mysql://localhost:3306/VehicleDatabase";
         String username = "root";
         String password = "";
         Connection con = null;
