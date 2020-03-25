@@ -37,22 +37,22 @@ public class MainApp
             System.out.println("Check Valid Registrations Numbers (Type:Validate)");
             System.out.println("Write Valid events to the Database (Type:Write)");
 
-            input = kb.nextLine();
+            input = kb.nextLine().toLowerCase();
             switch (input)
             {
-                case "Load":
+                case "load":
                         tollEventHandler.loadDefaults();
                     break;
 
-                case "Validate":
+                case "validate":
                     tollEventHandler.checkForValidRegistration();
                     break;
 
-                case "Exit":
+                case "exit":
                     i = 1;
                     break;
 
-                case "Write":
+                case "write":
 
                     tollEventHandler.writeToDatabase();
                     String choice;
@@ -61,17 +61,17 @@ public class MainApp
                     System.out.println("Search by Registration (Type: Registration)");
                     System.out.println("Search by Start Date (Type: From)");
                     System.out.println("Search from Start to End Date (Type: To)");
-                    System.out.println("Get All Registrations");
-                    System.out.println("Return Details as a Map");
-                    choice = kb.nextLine();
+                    System.out.println("Get All Registrations (Type: All)");
+                    System.out.println("Return Details as a Map (Type: Map)");
+                    choice = kb.nextLine().toLowerCase();
                     switch (choice)
                     {
-                        case "Registration":
+                        case "registration":
                             System.out.println("Please enter a Vehicle Registration (Case Sensitive)");
                             String reg = kb.nextLine();
                             tollEventHandler.getEventsByRegistration(reg);
                             break;
-                        case "From":
+                        case "from":
                             System.out.println("Please Enter the Day 01-31DD");
                             String day = kb.nextLine();
                             if (day.length() != 2)
@@ -96,7 +96,7 @@ public class MainApp
                             tollEventHandler.getEventsFromDt(day,month,year);
                             break;
 
-                        case "To":
+                        case "to":
                             System.out.println("Please Enter the Starting Day 01-31DD");
                             day = kb.nextLine();
                             if (day.length() != 2)
@@ -146,6 +146,9 @@ public class MainApp
                         case "all":
                             tollEventHandler.printAllUniqueReg();
                             break;
+
+                        case "map":
+                            tollEventHandler.loadMap();
                     }
                     break;
 

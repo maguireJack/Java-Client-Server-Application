@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+//Did not get enought time to implement, had plans to change some void methods in tolleventhandler
 class MySqlTollEventDaoTest
 {
 

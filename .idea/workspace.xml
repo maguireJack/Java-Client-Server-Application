@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb4167d7-43c7-4f99-a63a-6f9e9d6d16e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dkit/maguireJack/Daos/MySqlTollEventDaoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlTollEventDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlTollEventDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/dkit/maguireJack/Daos/MySqlTollEventDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dkit/maguireJack/Daos/MySqlTollEventDaoTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

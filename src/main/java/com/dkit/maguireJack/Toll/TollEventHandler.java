@@ -179,4 +179,21 @@ public class TollEventHandler
                 System.out.println(e.getMessage());
             }
         }
+
+        public HashMap<String, ArrayList<TollEvent>> loadMap()
+        {
+            try
+            {
+                HashMap<String, ArrayList<TollEvent>> loadedMap = tollEventDao.loadTollEventsTable();
+                System.out.println(ANSI_GREEN + "Returned as HashMap");
+                return loadedMap;
+            }catch (DaoException e)
+            {
+                System.out.println(e.getMessage());
+            }
+            System.out.println(ANSI_RED +"No Maps Loaded, Check for database population");
+            System.out.println(ANSI_RESET);
+            return null;
+
+        }
 }
