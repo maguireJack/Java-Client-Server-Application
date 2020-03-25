@@ -34,7 +34,7 @@ public class MainApp
         {
             System.out.println(ANSI_RED + "These must be executed in order, or there will be no output");
             System.out.println(ANSI_RESET + "Load Registration Numbers (Type:Load)");
-            System.out.println("Check Valid Registrations Numbers (Type:Validation)");
+            System.out.println("Check Valid Registrations Numbers (Type:Validate)");
             System.out.println("Write Valid events to the Database (Type:Write)");
 
             input = kb.nextLine();
@@ -141,6 +141,10 @@ public class MainApp
                                 year1 = kb.nextLine();
                             }
                             tollEventHandler.getEventsBetweenDtFt(day, month, year, day1, month1, year1);
+                            break;
+
+                        case "all":
+                            tollEventHandler.printAllUniqueReg();
                             break;
                     }
                     break;

@@ -4,9 +4,7 @@ import com.dkit.maguireJack.Daos.MySqlTollEventDao;
 import com.dkit.maguireJack.Daos.MySqlVehicleDao;
 import com.dkit.maguireJack.Exceptions.DaoException;
 
-import java.io.DataOutput;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Instant;
 import java.util.*;
@@ -28,7 +26,7 @@ public class TollEventHandler
     private HashMap<String, ArrayList<TollEvent>>validEvents = new HashMap<String, ArrayList<TollEvent>>();
     private HashMap<Integer, String> invalidVehicles = new HashMap<Integer, String>();
 
-        public void initialize()
+    public void initialize()
         {
 
             MySqlVehicleDao vehicleDao = new MySqlVehicleDao();
@@ -158,10 +156,23 @@ public class TollEventHandler
         {
             try
             {
-                List<String>UniqueReg = new ArrayList<String>(tollEventDao.getAllUniqueReg());
-                Collections.sort(UniqueReg);
-                System.out.println(UniqueReg.toString());
+                HashMap<String, ArrayList<TollEvent>> UniqueReg = tollEventDao.loadTollEventsTable();
+                List<ArrayList<TollEvent>> ListOfEvents = new ArrayList<>(UniqueReg.values());
 
+                List<TollEvent> ArrayListOfEvents = new ArrayList<>();
+                for (int i = 0; i < ListOfEvents.size(); i++)
+                {
+                    for (int j = 0; j < ListOfEvents.get(i).size(); j++)
+                    {
+                        ArrayListOfEvents.add(ListOfEvents.get(i).get(j));
+                    }
+
+                }
+                Set<TollEvent> removeDuplicates = new TreeSet<>(ArrayListOfEvents);
+                ArrayListOfEvents = new ArrayList<>(removeDuplicates);
+                //Tried LinkedHastSet couldnt get it to work the way I intended
+                Collections.sort(ArrayListOfEvents);
+                System.out.println(ArrayListOfEvents);
             }
             catch (DaoException e)
             {

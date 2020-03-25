@@ -17,6 +17,10 @@ import java.util.List;
 public class MySqlTollEventDao extends MySqlDao
 {
 
+    /**
+     * @param table
+     * @throws DaoException
+     */
     public void batchToDatabase(HashMap<String, ArrayList<TollEvent>> table) throws DaoException
     {
         Connection con = null;

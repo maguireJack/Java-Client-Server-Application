@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb4167d7-43c7-4f99-a63a-6f9e9d6d16e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Toll-Events.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlTollEventDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlVehicleDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/MainApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEventHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/dkit/maguireJack/Daos/MySqlTollEventDaoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlTollEventDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlTollEventDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEventHandler.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -40,12 +38,21 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.dkit.maguireJack.Daos" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jmagu\Desktop\gd2CA5_TollBoothApplication" />
     </key>
@@ -107,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582818685641</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Answered Questions 1-9">
+      <created>1584304758709</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584304758709</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -125,6 +139,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added MySql Dao" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added MySql Dao" />
+    <MESSAGE value="Answered Questions 1-9" />
+    <option name="LAST_COMMIT_MESSAGE" value="Answered Questions 1-9" />
   </component>
 </project>
