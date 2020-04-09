@@ -10,7 +10,12 @@ import java.net.Socket;
 import java.util.Date;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+
+import com.dkit.maguireJack.Toll.TollEvent;
 import com.dkit.maguireJack.Toll.TollEventHandler;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.w3c.dom.ls.LSOutput;
 
 public class TollBoothServiceThread extends Thread
@@ -49,6 +54,7 @@ public class TollBoothServiceThread extends Thread
         //Set up variables for communication with the client
         String incomingMessage = "";
         String response;
+        ObjectMapper objectMapper = new ObjectMapper();
         TollEventHandler te = new TollEventHandler();
 
         try
@@ -64,6 +70,7 @@ public class TollBoothServiceThread extends Thread
 
                 //Break the input up into components
                 String[] components = incomingMessage.split(TollBoothServiceDetails.COMMAND_SEPARATOR);
+
 
                 //Process the information supplied by the client
                 if(components[0].equals(TollBoothServiceDetails.ECHO))
@@ -82,10 +89,31 @@ public class TollBoothServiceThread extends Thread
                     }
                     response = echoMessage.toString();
                 }
-                else if(components[0].equals(new Request(TollBoothServiceDetails.GET_REGISTERED_VEHICLES)))
+                else if(components[0].equals(new Request(TollBoothServiceDetails.GET_REGISTERED_VEHICLES).toString()))
                 {
-                    System.out.println("Found");
-                    response = "Found";
+                    response = te.returnAllUniqueReg().toString();
+                }
+                else if(components[0].equals(new Request(TollBoothServiceDetails.REGISTER_VEHICLE).toString()))
+                {
+                    String ValidEvent = input.nextLine();
+                    System.out.println("Recieved Message: " + ValidEvent);
+                    try {
+                        objectMapper.readValue(ValidEvent, TollEvent.class);
+                        System.out.println("Vehicle Added Successfully");
+                        response = new Request("RegisteredValidTollEvent").toString();
+                    }catch (JsonMappingException e)
+                    {
+                        System.out.println(e.getMessage());
+                        System.out.println("Vehicle Added Unsuccessfully");
+                    }catch (JsonProcessingException e)
+                    {
+                        System.out.println(e.getMessage());
+                        System.out.println("Vehicle Added Unsuccessfully");
+                    }
+
+
+
+
                 }
                 else if(components[0].equals(TollBoothServiceDetails.END_SESSION))
                 {
@@ -97,6 +125,7 @@ public class TollBoothServiceThread extends Thread
                 }
 
                 //Send back the response
+                System.out.println("Sent back response, check client");
                 output.println(response);
                 output.flush();
             }

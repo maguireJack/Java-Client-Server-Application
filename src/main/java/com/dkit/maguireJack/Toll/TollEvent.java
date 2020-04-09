@@ -7,6 +7,7 @@ public class TollEvent implements Comparable<TollEvent>
     String vehicleReg;
     long carID;
     Instant time;
+    String tollBoothId;
 
     public TollEvent(String vehicleReg, long carID)
     {
@@ -20,6 +21,14 @@ public class TollEvent implements Comparable<TollEvent>
         this.carID = carID;
         this.time = time;
     }
+    public TollEvent(String tollBoothId, String vehicleReg, long carID)
+    {
+        this.tollBoothId = tollBoothId;
+        this.vehicleReg = vehicleReg;
+        this.carID = carID;
+        this.time = Instant.now();
+    }
+
 
     public String getVehicleReg()
     {

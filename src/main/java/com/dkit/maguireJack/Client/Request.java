@@ -9,4 +9,9 @@ public class Request
         this.packetType = packetType;
 
     }
+
+    @Override
+    public String toString() {
+        return "{" + "\"packetType\"" + ":" + "\"" + packetType + "\"" + '}';
+    }
 }

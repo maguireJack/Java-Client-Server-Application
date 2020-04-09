@@ -76,6 +76,34 @@ public class TollEventHandler
 
         }
 
+    public TollEvent loadDefaultsByString(String components)
+    {
+
+
+            if (components.length() < 1)
+            {
+                throw new NullPointerException();
+            }
+
+                String tollEvent = components;
+
+                String[] vehicleDetails = tollEvent.split(",");
+                String tollBoothId = vehicleDetails[0];
+                String vehicleReg = vehicleDetails[1];
+                int imageID = Integer.parseInt(vehicleDetails[2]);
+                Instant now = Instant.now();
+                TollEvent newTollEvent = new TollEvent(tollBoothId, vehicleReg, imageID);
+                tollEventsByReg.add(newTollEvent);
+                loadedEvents.put(vehicleReg, tollEventsByReg);
+
+            System.out.println(ANSI_GREEN + "Loaded Vehicles Succesfully");
+            System.out.println(ANSI_RESET);
+
+            return newTollEvent;
+    }
+
+
+
         public void writeToDatabase()
         {
             try
@@ -179,6 +207,39 @@ public class TollEventHandler
                 System.out.println(e.getMessage());
             }
         }
+
+    public List returnAllUniqueReg()
+    {
+        try
+        {
+            HashMap<String, ArrayList<TollEvent>> UniqueReg = tollEventDao.loadTollEventsTable();
+            List<ArrayList<TollEvent>> ListOfEvents = new ArrayList<>(UniqueReg.values());
+
+            List<TollEvent> ArrayListOfEvents = new ArrayList<>();
+            for (int i = 0; i < ListOfEvents.size(); i++)
+            {
+                for (int j = 0; j < ListOfEvents.get(i).size(); j++)
+                {
+                    ArrayListOfEvents.add(ListOfEvents.get(i).get(j));
+                }
+
+            }
+            Set<TollEvent> removeDuplicates = new TreeSet<>(ArrayListOfEvents);
+            ArrayListOfEvents = new ArrayList<>(removeDuplicates);
+            //Tried LinkedHastSet couldnt get it to work the way I intended
+            Collections.sort(ArrayListOfEvents);
+            return ArrayListOfEvents;
+
+        }
+        catch (DaoException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return null;
+
+    }
+
+
 
         public HashMap<String, ArrayList<TollEvent>> loadMap()
         {

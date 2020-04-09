@@ -5,8 +5,11 @@ import com.dkit.maguireJack.Core.TollBoothServiceDetails;
 import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.time.Instant;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import com.dkit.maguireJack.Toll.TollEventHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
@@ -19,7 +22,8 @@ public class TollBoothClient
             //Step 1: Establish a connection with server
             //Like a phone call, first thing you do is
             //dial the number you want to talk to
-            Socket dataSocket = new Socket("localhost", TollBoothServiceDetails.LISTENING_PORT);
+            Socket dataSocket = new Socket("109.76.42.206", TollBoothServiceDetails.LISTENING_PORT);
+            TollEventHandler te = new TollEventHandler();
 
             //Step 2: Build the output and input streams
             OutputStream out = dataSocket.getOutputStream();
@@ -31,6 +35,8 @@ public class TollBoothClient
             Scanner keyboard = new Scanner(System.in);
             ObjectMapper objectMapper = new ObjectMapper();
             String message = "";
+            Request req;
+            Scanner kb = new Scanner(System.in);
 
 
             while(!message.equals(TollBoothServiceDetails.END_SESSION))
@@ -39,7 +45,7 @@ public class TollBoothClient
                 int choice = getNumber(keyboard);
                 String response = "";
 
-                if(choice >=0 && choice < 3)
+                if(choice >=0 && choice < 4)
                 {
                     switch(choice)
                     {
@@ -71,15 +77,39 @@ public class TollBoothClient
                         case 2:
                             message = TollBoothServiceDetails.GET_REGISTERED_VEHICLES;
                             //Send message
-                            Request req = new Request(message);
-                            objectMapper.writeValue(out, req);
-
+                            req = new Request(message);
+                            output.println(req.toString());
+//                            objectMapper.writeValue(out, req);
                             output.flush();
 
+                            while(input.hasNext())
+                            {
+                                response = input.nextLine();
+                                System.out.println(response);
+                            }
                             //Get response
-                            response = input.nextLine();
+
                             System.out.println("Registered Vehicles : " + response);
                             break;
+                        case 3:
+                            message = TollBoothServiceDetails.REGISTER_VEHICLE;
+                            Instant time = Instant.now();
+                            req = new Request(message);
+                            output.println(req.toString());
+                            output.flush();
+                            System.out.println("Please enter the following details in the format");
+                            System.out.println("TollBoothId" + ',' + "VehicleRegistration" + ',' + "VehicleImageID" + ',');
+                            String ValidEvent;
+                            ValidEvent = kb.nextLine();
+                            String tollEvent = objectMapper.writeValueAsString(te.loadDefaultsByString(ValidEvent));
+                            output.println(tollEvent);
+
+
+                            response = input.nextLine();
+
+                            break;
+
+
                     }
                     if(response.equals(TollBoothServiceDetails.UNRECOGNISED))
                     {
@@ -108,7 +138,8 @@ public class TollBoothClient
     {
         System.out.println("0) to exit");
         System.out.println("1) to echo a message");
-        System.out.println("2) to date and time");
+        System.out.println("2) to get all registered vehicles");
+        System.out.println("3) to register a new vehicle");
     }
 
     public static int getNumber(Scanner keyboard)
