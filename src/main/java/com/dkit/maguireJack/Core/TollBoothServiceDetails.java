@@ -12,6 +12,7 @@ public class TollBoothServiceDetails
     public static final String ECHO = "ECHO";
     public static final String GET_REGISTERED_VEHICLES = "GetRegisteredVehicles";
     public static final String REGISTER_VEHICLE = "RegisterVehicle";
+    public static final String HEARTBEAT = "Heartbeat";
 
     //Response strings
     public static final String UNRECOGNISED = "UNKNOWN_COMMAND";

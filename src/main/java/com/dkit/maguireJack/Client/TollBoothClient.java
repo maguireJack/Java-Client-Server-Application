@@ -45,7 +45,7 @@ public class TollBoothClient
                 int choice = getNumber(keyboard);
                 String response = "";
 
-                if(choice >=0 && choice < 4)
+                if(choice >=0 && choice < 5)
                 {
                     switch(choice)
                     {
@@ -103,9 +103,14 @@ public class TollBoothClient
                             ValidEvent = kb.nextLine();
                             String tollEvent = objectMapper.writeValueAsString(te.loadDefaultsByString(ValidEvent));
                             output.println(tollEvent);
-
-
+                            break;
+                        case 4:
+                            message = TollBoothServiceDetails.HEARTBEAT;
+                            req = new Request(message);
+                            output.println(req.toString());
+                            output.flush();
                             response = input.nextLine();
+                            System.out.println("Received response: " + response);
 
                             break;
 
@@ -140,6 +145,7 @@ public class TollBoothClient
         System.out.println("1) to echo a message");
         System.out.println("2) to get all registered vehicles");
         System.out.println("3) to register a new vehicle");
+        System.out.println("4) to check for heartbeat");
     }
 
     public static int getNumber(Scanner keyboard)

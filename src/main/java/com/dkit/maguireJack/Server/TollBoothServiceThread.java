@@ -110,19 +110,20 @@ public class TollBoothServiceThread extends Thread
                         System.out.println(e.getMessage());
                         System.out.println("Vehicle Added Unsuccessfully");
                     }
-
-
-
-
                 }
                 else if(components[0].equals(TollBoothServiceDetails.END_SESSION))
                 {
                     response = TollBoothServiceDetails.SESSION_TERMINATED;
                 }
+                else if(components[0].equals(new Request(TollBoothServiceDetails.HEARTBEAT).toString()))
+                {
+                    response = TollBoothServiceDetails.HEARTBEAT;
+                }
                 else
                 {
                     response = TollBoothServiceDetails.UNRECOGNISED;
                 }
+
 
                 //Send back the response
                 System.out.println("Sent back response, check client");
