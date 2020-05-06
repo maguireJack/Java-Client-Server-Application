@@ -3,6 +3,7 @@ package com.dkit.maguireJack.Toll;
 import com.dkit.maguireJack.Daos.MySqlTollEventDao;
 import com.dkit.maguireJack.Daos.MySqlVehicleDao;
 import com.dkit.maguireJack.Exceptions.DaoException;
+import com.fasterxml.jackson.core.JsonFactoryBuilder;
 
 import java.io.File;
 import java.io.IOException;
@@ -207,6 +208,43 @@ public class TollEventHandler
                 System.out.println(e.getMessage());
             }
         }
+
+    public String GetAllUniqueReg()
+    {
+        try
+        {
+            HashMap<String, ArrayList<TollEvent>> UniqueReg = tollEventDao.loadTollEventsTable();
+            List<ArrayList<TollEvent>> ListOfEvents = new ArrayList<>(UniqueReg.values());
+
+            List<TollEvent> ArrayListOfEvents = new ArrayList<>();
+            for (int i = 0; i < ListOfEvents.size(); i++)
+            {
+                for (int j = 0; j < ListOfEvents.get(i).size(); j++)
+                {
+                    ArrayListOfEvents.add(ListOfEvents.get(i).get(j));
+                }
+
+            }
+            Set<TollEvent> removeDuplicates = new TreeSet<>(ArrayListOfEvents);
+            ArrayListOfEvents = new ArrayList<>(removeDuplicates);
+            //Tried LinkedHastSet couldnt get it to work the way I intended
+            Collections.sort(ArrayListOfEvents);
+            String vehicleRegs = "Vehicles " + ':';
+
+            for (int o = 0; o < ArrayListOfEvents.size(); o++)
+            {
+                vehicleRegs += "\"" + ArrayListOfEvents.get(o).vehicleReg + "\", ";
+            }
+            return vehicleRegs;
+
+        }
+        catch (DaoException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return null;
+
+    }
 
     public List returnAllUniqueReg()
     {

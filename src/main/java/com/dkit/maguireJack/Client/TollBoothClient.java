@@ -22,7 +22,7 @@ public class TollBoothClient
             //Step 1: Establish a connection with server
             //Like a phone call, first thing you do is
             //dial the number you want to talk to
-            Socket dataSocket = new Socket("109.76.42.206", TollBoothServiceDetails.LISTENING_PORT);
+            Socket dataSocket = new Socket("127.0.0.1", TollBoothServiceDetails.LISTENING_PORT);
             TollEventHandler te = new TollEventHandler();
 
             //Step 2: Build the output and input streams
@@ -77,19 +77,16 @@ public class TollBoothClient
                         case 2:
                             message = TollBoothServiceDetails.GET_REGISTERED_VEHICLES;
                             //Send message
-                            req = new Request(message);
-                            output.println(req.toString());
+
+//                            output.println(req.toString());
 //                            objectMapper.writeValue(out, req);
+                            req = new Request(message);
+                            output.println(objectMapper.writeValueAsString(req));
                             output.flush();
 
-                            while(input.hasNext())
-                            {
-                                response = input.nextLine();
-                                System.out.println(response);
-                            }
-                            //Get response
 
-                            System.out.println("Registered Vehicles : " + response);
+                            response = input.nextLine();
+                            System.out.println(response);
                             break;
                         case 3:
                             message = TollBoothServiceDetails.REGISTER_VEHICLE;

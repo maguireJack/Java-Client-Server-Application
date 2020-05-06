@@ -2,7 +2,7 @@ package com.dkit.maguireJack.Core;
 
 public class TollBoothServiceDetails
 {
-    public static final int LISTENING_PORT = 50000;
+    public static final int LISTENING_PORT = 50001;
 
     //Breaking characters
     public static final String COMMAND_SEPARATOR = "%%";
