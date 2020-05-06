@@ -209,7 +209,7 @@ public class TollEventHandler
             }
         }
 
-    public String GetAllUniqueReg()
+    public String getAllUniqueRegJSON()
     {
         try
         {
@@ -229,11 +229,19 @@ public class TollEventHandler
             ArrayListOfEvents = new ArrayList<>(removeDuplicates);
             //Tried LinkedHastSet couldnt get it to work the way I intended
             Collections.sort(ArrayListOfEvents);
-            String vehicleRegs = "Vehicles " + ':';
+            String vehicleRegs = "Vehicles " + ':' + '[';
 
             for (int o = 0; o < ArrayListOfEvents.size(); o++)
             {
-                vehicleRegs += "\"" + ArrayListOfEvents.get(o).vehicleReg + "\", ";
+                vehicleRegs += "\"" + ArrayListOfEvents.get(o).vehicleReg + "\"";
+                if(o != ArrayListOfEvents.size()-1)
+                {
+                    vehicleRegs+= ", ";
+                }
+                else
+                {
+                    vehicleRegs += ']';
+                }
             }
             return vehicleRegs;
 

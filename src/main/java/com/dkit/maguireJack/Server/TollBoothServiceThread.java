@@ -91,7 +91,7 @@ public class TollBoothServiceThread extends Thread
                 }
                 else if(components[0].equals(new Request(TollBoothServiceDetails.GET_REGISTERED_VEHICLES).toString()))
                 {
-                    response = te.GetAllUniqueReg().toString();
+                    response = te.getAllUniqueRegJSON().toString();
                 }
                 else if(components[0].equals(new Request(TollBoothServiceDetails.REGISTER_VEHICLE).toString()))
                 {
