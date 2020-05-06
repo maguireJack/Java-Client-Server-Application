@@ -93,7 +93,7 @@ public class TollEventHandler
                 String vehicleReg = vehicleDetails[1];
                 int imageID = Integer.parseInt(vehicleDetails[2]);
                 Instant now = Instant.now();
-                TollEvent newTollEvent = new TollEvent(tollBoothId, vehicleReg, imageID);
+                TollEvent newTollEvent = new TollEvent(tollBoothId, vehicleReg, imageID, now);
                 tollEventsByReg.add(newTollEvent);
                 loadedEvents.put(vehicleReg, tollEventsByReg);
 

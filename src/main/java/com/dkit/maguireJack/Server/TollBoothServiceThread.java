@@ -16,6 +16,8 @@ import com.dkit.maguireJack.Toll.TollEventHandler;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.w3c.dom.ls.LSOutput;
 
 public class TollBoothServiceThread extends Thread
@@ -55,6 +57,8 @@ public class TollBoothServiceThread extends Thread
         String incomingMessage = "";
         String response;
         ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
+        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
         TollEventHandler te = new TollEventHandler();
 
         try
@@ -96,9 +100,11 @@ public class TollBoothServiceThread extends Thread
                 else if(components[0].equals(new Request(TollBoothServiceDetails.REGISTER_VEHICLE).toString()))
                 {
                     String ValidEvent = input.nextLine();
+                    System.out.println(ValidEvent);
                     System.out.println("Recieved Message: " + ValidEvent);
                     try {
-                        objectMapper.readValue(ValidEvent, TollEvent.class);
+                        TollEvent event = objectMapper.readValue(ValidEvent, TollEvent.class);
+                        System.out.println(event.toString());
                         System.out.println("Vehicle Added Successfully");
                         response = new Request("RegisteredValidTollEvent").toString();
                     }catch (JsonMappingException e)
@@ -111,7 +117,7 @@ public class TollBoothServiceThread extends Thread
                         System.out.println("Vehicle Added Unsuccessfully");
                     }
                 }
-                else if(components[0].equals(TollBoothServiceDetails.END_SESSION))
+                else if(components[0].equals(new Request(TollBoothServiceDetails.END_SESSION).toString()))
                 {
                     response = TollBoothServiceDetails.SESSION_TERMINATED;
                 }

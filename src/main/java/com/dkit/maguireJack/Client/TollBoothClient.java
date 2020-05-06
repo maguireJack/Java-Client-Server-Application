@@ -9,8 +9,12 @@ import java.time.Instant;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import com.dkit.maguireJack.Toll.TollEvent;
 import com.dkit.maguireJack.Toll.TollEventHandler;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 
 public class TollBoothClient
@@ -33,7 +37,18 @@ public class TollBoothClient
             Scanner input = new Scanner(new InputStreamReader(in));
 
             Scanner keyboard = new Scanner(System.in);
+
+            /*
+            * By default this wrapper doesnt know how to handle Instants, it will write them in epoch time
+            * use the Serialization Feature to write them as normal timestamp
+            * Credit To:
+            * https://stackoverflow.com/questions/45662820/how-to-set-format-of-string-for-java-time-instant-using-objectmapper
+            * */
+
             ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.registerModule(new JavaTimeModule());
+            objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+
             String message = "";
             Request req;
             Scanner kb = new Scanner(System.in);
@@ -52,8 +67,8 @@ public class TollBoothClient
                         case 0:
                             message = TollBoothServiceDetails.END_SESSION;
 
-                            //Send message
-                            output.println(message);
+                            req = new Request(message);
+                            output.println(objectMapper.writeValueAsString(req));
                             output.flush();
 
                             response = input.nextLine();
@@ -94,12 +109,24 @@ public class TollBoothClient
                             req = new Request(message);
                             output.println(req.toString());
                             output.flush();
+
                             System.out.println("Please enter the following details in the format");
-                            System.out.println("TollBoothId" + ',' + "VehicleRegistration" + ',' + "VehicleImageID" + ',');
-                            String ValidEvent;
-                            ValidEvent = kb.nextLine();
-                            String tollEvent = objectMapper.writeValueAsString(te.loadDefaultsByString(ValidEvent));
-                            output.println(tollEvent);
+                            System.out.println("TollBooth ID");
+                            String tbid = kb.nextLine();
+                            System.out.println("Vehicle Registration");
+                            String vhreg = kb.nextLine();
+                            System.out.println("Image ID");
+                            long imgid = kb.nextLong();
+
+
+                            TollEvent clientEvent = new TollEvent(tbid, vhreg, imgid, time);
+
+
+                            System.out.println(objectMapper.writeValueAsString(clientEvent));
+                            output.println(objectMapper.writeValueAsString(clientEvent));
+
+                            output.flush();
+
                             break;
                         case 4:
                             message = TollBoothServiceDetails.HEARTBEAT;
