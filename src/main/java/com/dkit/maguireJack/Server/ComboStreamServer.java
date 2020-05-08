@@ -34,13 +34,6 @@ public class ComboStreamServer
                 threadCount++;
                 System.out.println("The server has now accepted " + threadCount + " clients");
 
-                //Build the thread
-                /* Need to give the thread:
-                1) The group to be stored in
-                2) a name
-                3) a socket to communicate through
-                4) any other information that should be shared
-                 */
                 TollBoothServiceThread newClient = new TollBoothServiceThread(clientThreadGroup, dataSocket.getInetAddress()+"", dataSocket, threadCount);
                 newClient.start();
             }

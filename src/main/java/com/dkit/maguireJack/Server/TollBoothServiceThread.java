@@ -46,14 +46,6 @@ public class TollBoothServiceThread extends Thread
     @Override
     public void run()
     {
-        //Loop
-        //Wait for message
-        //Process message
-        //Send response
-        //TODO Homework part one write the rest of this method
-        //TODO Homework part two pair up with someone from the class. Set up port forwarding on both of your routers. One runs the server and the other connected and then switch.
-        //Will write the solution on Thursday
-        //Set up variables for communication with the client
         String incomingMessage = "";
         String response;
         ObjectMapper objectMapper = new ObjectMapper();
@@ -100,11 +92,10 @@ public class TollBoothServiceThread extends Thread
                 else if(components[0].equals(new Request(TollBoothServiceDetails.REGISTER_VEHICLE).toString()))
                 {
                     String ValidEvent = input.nextLine();
-                    System.out.println(ValidEvent);
                     System.out.println("Recieved Message: " + ValidEvent);
                     try {
                         TollEvent event = objectMapper.readValue(ValidEvent, TollEvent.class);
-                        System.out.println(event.toString());
+
                         System.out.println("Vehicle Added Successfully");
                         response = new Request("RegisteredValidTollEvent").toString();
                     }catch (JsonMappingException e)

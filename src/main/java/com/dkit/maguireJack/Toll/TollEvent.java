@@ -9,10 +9,10 @@ import java.time.Instant;
 
 public class TollEvent implements Comparable<TollEvent>
 {
-    String tollBoothId;
-    String vehicleReg;
-    long carID;
-    Instant time;
+    private String tollBoothId;
+    private String vehicleReg;
+    private long carID;
+    private Instant time;
 
 
 
@@ -24,10 +24,10 @@ public class TollEvent implements Comparable<TollEvent>
         this.time = time;
     }
 
-//    public TollEvent()
-//    {
-//        super();
-//    }
+    public TollEvent()
+    {
+        super();
+    }
 
     @JsonIgnore
     @JsonIgnoreProperties
@@ -38,16 +38,17 @@ public class TollEvent implements Comparable<TollEvent>
         this.time = Instant.now();
     }
 
-    @JsonIgnore
-    @JsonIgnoreProperties
-    public TollEvent(String vehicleReg, long carID, Instant time)
-        {
-            this.vehicleReg = vehicleReg;
-            this.carID = carID;
-            this.time = time;
-    }
+//    @JsonIgnore
+//    @JsonIgnoreProperties
+//    public TollEvent(String vehicleReg, long carID, Instant time)
+//    {
+//            this.vehicleReg = vehicleReg;
+//            this.carID = carID;
+//            this.time = time;
+//    }
 
 
+    public String getTollBoothId() {return tollBoothId;}
 
     public String getVehicleReg()
     {

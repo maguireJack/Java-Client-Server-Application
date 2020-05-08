@@ -6,6 +6,7 @@ import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -44,7 +45,6 @@ public class TollBoothClient
             * Credit To:
             * https://stackoverflow.com/questions/45662820/how-to-set-format-of-string-for-java-time-instant-using-objectmapper
             * */
-
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.registerModule(new JavaTimeModule());
             objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
@@ -57,6 +57,7 @@ public class TollBoothClient
             while(!message.equals(TollBoothServiceDetails.END_SESSION))
             {
                 displayMenu();
+
                 int choice = getNumber(keyboard);
                 String response = "";
 
@@ -104,6 +105,7 @@ public class TollBoothClient
                             System.out.println(response);
                             break;
                         case 3:
+                            ArrayList<TollEvent> localEvents = new ArrayList<TollEvent>();
                             message = TollBoothServiceDetails.REGISTER_VEHICLE;
                             Instant time = Instant.now();
                             req = new Request(message);
@@ -112,20 +114,26 @@ public class TollBoothClient
 
                             System.out.println("Please enter the following details in the format");
                             System.out.println("TollBooth ID");
-                            String tbid = kb.nextLine();
+                            String tbid = kb.nextLine().toUpperCase();
                             System.out.println("Vehicle Registration");
-                            String vhreg = kb.nextLine();
+                            String vhreg = kb.nextLine().toUpperCase();
                             System.out.println("Image ID");
                             long imgid = kb.nextLong();
 
 
                             TollEvent clientEvent = new TollEvent(tbid, vhreg, imgid, time);
+                            localEvents.add(clientEvent);
 
 
-                            System.out.println(objectMapper.writeValueAsString(clientEvent));
+
                             output.println(objectMapper.writeValueAsString(clientEvent));
-
                             output.flush();
+                            response = input.nextLine();
+                            System.out.println(response);
+                            if(response.equals(new Request("RegisteredValidTollEvent").toString()))
+                            {
+                                localEvents.remove(clientEvent);
+                            }
 
                             break;
                         case 4:

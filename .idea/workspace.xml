@@ -3,13 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="cb4167d7-43c7-4f99-a63a-6f9e9d6d16e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CA5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/Request.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/TollBoothClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/TollBoothClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlTollEventDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlTollEventDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Server/ComboStreamServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Server/ComboStreamServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Server/TollBoothServiceThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Server/TollBoothServiceThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEventHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/dkit/maguireJack/Client/TollBoothClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dkit/maguireJack/Client/TollBoothClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dkit/maguireJack/Server/TollBoothServiceThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dkit/maguireJack/Server/TollBoothServiceThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dkit/maguireJack/Daos/MySqlTollEventDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dkit/maguireJack/Daos/MySqlTollEventDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/dkit/maguireJack/Toll/TollEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dkit/maguireJack/Toll/TollEvent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/dkit/maguireJack/Toll/TollEventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dkit/maguireJack/Toll/TollEventHandler.class" afterDir="false" />
     </list>
@@ -28,17 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Server/TollBoothServiceThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="102" column="49" selection-start-line="102" selection-start-column="49" selection-end-line="102" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="-1687">
+              <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -46,7 +40,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1386">
+            <state relative-caret-position="539">
               <caret line="66" column="61" selection-start-line="66" selection-start-column="61" selection-end-line="66" selection-end-column="61" />
             </state>
           </provider>
@@ -55,32 +49,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEventHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="95" column="92" selection-start-line="95" selection-start-column="92" selection-end-line="95" selection-end-column="92" />
+            <state relative-caret-position="651">
+              <caret line="206" column="13" lean-forward="true" selection-start-line="206" selection-start-column="13" selection-end-line="206" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/Request.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="14" column="77" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
-              <folding>
-                <element signature="e#225#226#0" expanded="true" />
-                <element signature="e#309#310#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="18" column="72" selection-start-line="18" selection-start-column="72" selection-end-line="18" selection-end-column="72" />
+            <state relative-caret-position="245">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#717#718#0" expanded="true" />
+                <element signature="e#740#741#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlTollEventDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="90" column="64" selection-start-line="90" selection-start-column="64" selection-end-line="90" selection-end-column="64" />
+            <state relative-caret-position="190">
+              <caret line="302" column="56" selection-start-line="302" selection-start-column="56" selection-end-line="302" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -98,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Server/ComboStreamServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-273">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="357">
+              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -107,11 +90,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/TollBoothClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+            <state relative-caret-position="-91">
+              <caret line="100" column="43" lean-forward="true" selection-start-line="100" selection-start-column="43" selection-end-line="100" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4236#4247#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/Request.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+              <folding>
+                <element signature="e#225#226#0" expanded="true" />
+                <element signature="e#309#310#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-11.0.6/lib/src.zip!/java.base/java/io/FileInputStream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4578">
+              <caret line="242" column="23" selection-start-line="242" selection-start-column="23" selection-end-line="242" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -141,14 +147,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/Request.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Core/TollBoothServiceDetails.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Server/TollBoothServiceThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlTollEventDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/TollBoothClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEventHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/TollBoothClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Server/ComboStreamServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Server/TollBoothServiceThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/Request.java" />
       </list>
     </option>
   </component>
@@ -398,7 +405,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27132195" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2771855" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -464,18 +471,6 @@
     <MESSAGE value="Answered Questions 1-9" />
     <option name="LAST_COMMIT_MESSAGE" value="Answered Questions 1-9" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/TollBoothClient.java</url>
-          <line>124</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-11.0.6/lib/src.zip!/java.base/java/util/Scanner.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -512,14 +507,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/Request.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.10.3/jackson-databind-2.10.3.jar!/com/fasterxml/jackson/databind/ObjectMapper.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="14" column="77" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
-          <folding>
-            <element signature="e#225#226#0" expanded="true" />
-            <element signature="e#309#310#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="184">
+          <caret line="1370" column="83" lean-forward="true" selection-start-line="1370" selection-start-column="83" selection-end-line="1370" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.6/lib/src.zip!/java.base/java/io/FileInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4578">
+          <caret line="242" column="23" selection-start-line="242" selection-start-column="23" selection-end-line="242" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -530,71 +535,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="66" column="61" selection-start-line="66" selection-start-column="61" selection-end-line="66" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Server/ComboStreamServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-273">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Server/TollBoothServiceThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="102" column="49" selection-start-line="102" selection-start-column="49" selection-end-line="102" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.10.3/jackson-databind-2.10.3.jar!/com/fasterxml/jackson/databind/ObjectMapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="424" column="83" lean-forward="true" selection-start-line="424" selection-start-column="83" selection-end-line="424" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlTollEventDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="90" column="64" selection-start-line="90" selection-start-column="64" selection-end-line="90" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/TollBoothClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+        <state relative-caret-position="245">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="95" column="92" selection-start-line="95" selection-start-column="92" selection-end-line="95" selection-end-column="92" />
+        <state relative-caret-position="651">
+          <caret line="206" column="13" lean-forward="true" selection-start-line="206" selection-start-column="13" selection-end-line="206" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Toll/TollEvent.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Server/ComboStreamServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="18" column="72" selection-start-line="18" selection-start-column="72" selection-end-line="18" selection-end-column="72" />
+        <state relative-caret-position="357">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="66" column="61" selection-start-line="66" selection-start-column="61" selection-end-line="66" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Daos/MySqlTollEventDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="302" column="56" selection-start-line="302" selection-start-column="56" selection-end-line="302" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Server/TollBoothServiceThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1687">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/TollBoothClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-91">
+          <caret line="100" column="43" lean-forward="true" selection-start-line="100" selection-start-column="43" selection-end-line="100" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4236#4247#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dkit/maguireJack/Client/Request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="e#225#226#0" expanded="true" />
+            <element signature="e#309#310#0" expanded="true" />
           </folding>
         </state>
       </provider>

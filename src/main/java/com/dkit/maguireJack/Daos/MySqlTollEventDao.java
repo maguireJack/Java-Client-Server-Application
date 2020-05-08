@@ -88,7 +88,7 @@ public class MySqlTollEventDao extends MySqlDao
                 String VehicleReg = rs.getString("numPlate");
                 long imageID = rs.getInt("image");
                 Instant time = Instant.parse(rs.getString("date"));
-                TollEvent tollEvent = new TollEvent(VehicleReg, imageID, time);
+                TollEvent tollEvent = new TollEvent("", VehicleReg, imageID, time);
                 TollEvents.add(tollEvent);
                 TollEventsByReg.put(VehicleReg, TollEvents);
             }
@@ -141,7 +141,7 @@ public class MySqlTollEventDao extends MySqlDao
                 String VehicleReg = rs.getString("numPlate");
                 long imageID = rs.getInt("image");
                 Instant time = Instant.parse(rs.getString("date"));
-                TollEvent tollEvent = new TollEvent(VehicleReg, imageID, time);
+                TollEvent tollEvent = new TollEvent("",VehicleReg, imageID, time);
                 TollEvents.add(tollEvent);
                 TollEventsByReg.put(VehicleReg, TollEvents);
             }
@@ -195,7 +195,7 @@ public class MySqlTollEventDao extends MySqlDao
                 String VehicleReg = rs.getString("numPlate");
                 long imageID = rs.getInt("image");
                 Instant time = Instant.parse(rs.getString("date"));
-                TollEvent tollEvent = new TollEvent(VehicleReg, imageID, time);
+                TollEvent tollEvent = new TollEvent("", VehicleReg, imageID, time);
                 TollEvents.add(tollEvent);
                 TollEventsByReg.put(VehicleReg, TollEvents);
             }
@@ -248,7 +248,7 @@ public class MySqlTollEventDao extends MySqlDao
                 String VehicleReg = rs.getString("numPlate");
                 long imageID = rs.getInt("image");
                 Instant time = Instant.parse(rs.getString("date"));
-                TollEvent tollEvent = new TollEvent(VehicleReg, imageID, time);
+                TollEvent tollEvent = new TollEvent("", VehicleReg, imageID, time);
                 TollEvents.add(tollEvent);
                 TollEventsByReg.put(VehicleReg, TollEvents);
             }
@@ -300,7 +300,7 @@ public class MySqlTollEventDao extends MySqlDao
                 String VehicleReg = rs.getString("numPlate");
                 long imageID = rs.getInt("image");
                 Instant time = Instant.parse(rs.getString("date"));
-                TollEvent tollEvent = new TollEvent(VehicleReg, imageID, time);
+                TollEvent tollEvent = new TollEvent("", VehicleReg, imageID, time);
                 HashSetReg.add(VehicleReg);
 
             }

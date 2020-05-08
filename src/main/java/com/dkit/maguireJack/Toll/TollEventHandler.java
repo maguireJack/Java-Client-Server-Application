@@ -63,7 +63,7 @@ public class TollEventHandler
                     String vehicleReg = vehicleDetails[0];
                     int imageID = Integer.parseInt(vehicleDetails[1]);
                     Instant now = Instant.parse(vehicleDetails[2]);
-                    TollEvent newTollEvent = new TollEvent(vehicleReg, imageID, now);
+                    TollEvent newTollEvent = new TollEvent("", vehicleReg, imageID, now);
                     tollEventsByReg.add(newTollEvent);
                     loadedEvents.put(vehicleReg, tollEventsByReg);
                 }
@@ -233,7 +233,7 @@ public class TollEventHandler
 
             for (int o = 0; o < ArrayListOfEvents.size(); o++)
             {
-                vehicleRegs += "\"" + ArrayListOfEvents.get(o).vehicleReg + "\"";
+                vehicleRegs += "\"" + ArrayListOfEvents.get(o).getVehicleReg() + "\"";
                 if(o != ArrayListOfEvents.size()-1)
                 {
                     vehicleRegs+= ", ";
