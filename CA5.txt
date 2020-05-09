@@ -9,6 +9,10 @@ INSERT INTO ValidVehicle
 ('201LH305'),('201LH306'),('201LH3064'),('201LH307'),('201LH3076'),('201LH308'),('201LH3083'),('201LH309'),('201LH310'),('201LH311'),('201LH312'),('201LH355'),('201LH777'),('151MN666');
 
 create table TollEvents(numPlate varchar(10), image bigint, date varchar(28), tollBoothID(10));
+create table customer(customerid int, customer_name varchar(20), customer_address varchar(30), primary key (customerid));
+create table vehicle(vehicleid int, vehicle_registration varchar(11), vehicle_type varchar(12), primary key (vehicleid));
+create table customer_vehicles(customerid int, foreign key (customerid) references customer(customerid), vehicleid int, foreign key (vehicleid) references vehicle(vehicleid));
+create table vehicle_type_cost(vehicle_type varchar(12), cost float);
 
 
 

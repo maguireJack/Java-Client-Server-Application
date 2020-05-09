@@ -22,15 +22,13 @@ public class TollBoothClient
 {
     public static void main(String[] args)
     {
+        ArrayList<TollEvent> localEvents = new ArrayList<TollEvent>();
         try
         {
-            //Step 1: Establish a connection with server
-            //Like a phone call, first thing you do is
-            //dial the number you want to talk to
             Socket dataSocket = new Socket("127.0.0.1", TollBoothServiceDetails.LISTENING_PORT);
             TollEventHandler te = new TollEventHandler();
 
-            //Step 2: Build the output and input streams
+
             OutputStream out = dataSocket.getOutputStream();
             PrintWriter output = new PrintWriter((new OutputStreamWriter(out)));
 
@@ -72,23 +70,34 @@ public class TollBoothClient
                             output.println(objectMapper.writeValueAsString(req));
                             output.flush();
 
-                            response = input.nextLine();
-                            if(response.equals(TollBoothServiceDetails.SESSION_TERMINATED))
+                            if(input.hasNextLine())
                             {
-                                System.out.println("Session ended");
+                                response = input.nextLine();
+                                if(response.equals(TollBoothServiceDetails.SESSION_TERMINATED))
+                                {
+                                    System.out.println("Session ended");
+                                }
+                            }
+                            else
+                            {
+                                System.out.println("Connection to server not found, please check for heartbeat");
                             }
                             break;
                         case 1:
                             message = generateEcho(keyboard);
 
-                            //Send message
                             output.println(message);
                             output.flush();
 
-                            //Get response
-                            response = input.nextLine();
-                            System.out.println("Received response: " + response);
-                            break;
+                            if(input.hasNextLine()) {
+                                response = input.nextLine();
+                                System.out.println("Received response: " + response);
+                                break;
+                            }
+                            else
+                            {
+                                System.out.println("Connection to server not found, please check for heartbeat");
+                            }
 
                         case 2:
                             message = TollBoothServiceDetails.GET_REGISTERED_VEHICLES;
@@ -105,9 +114,10 @@ public class TollBoothClient
                             System.out.println(response);
                             break;
                         case 3:
-                            ArrayList<TollEvent> localEvents = new ArrayList<TollEvent>();
                             message = TollBoothServiceDetails.REGISTER_VEHICLE;
                             Instant time = Instant.now();
+                            boolean esc = false;
+                            long imgid = 0;
                             req = new Request(message);
                             output.println(req.toString());
                             output.flush();
@@ -118,18 +128,36 @@ public class TollBoothClient
                             System.out.println("Vehicle Registration");
                             String vhreg = kb.nextLine().toUpperCase();
                             System.out.println("Image ID");
-                            long imgid = kb.nextLong();
-
+                            while(!esc)
+                            {
+                                if(kb.hasNextLong()) {
+                                    imgid = kb.nextLong();
+                                    esc = true;
+                                }
+                                else
+                                {
+                                    System.out.println("Image ID: ");
+                                    kb.nextLine();
+                                }
+                            }
 
                             TollEvent clientEvent = new TollEvent(tbid, vhreg, imgid, time);
                             localEvents.add(clientEvent);
 
 
-
                             output.println(objectMapper.writeValueAsString(clientEvent));
                             output.flush();
-                            response = input.nextLine();
-                            System.out.println(response);
+                            if(input.hasNext())
+                            {
+                                response = input.nextLine();
+                                System.out.println(response);
+                            }
+                            else
+                            {
+                                System.out.println("Vehicle Saved Locally");
+                                System.out.println("Connection to server not found, please check for heartbeat");
+                            }
+
                             if(response.equals(new Request("RegisteredValidTollEvent").toString()))
                             {
                                 localEvents.remove(clientEvent);
@@ -141,8 +169,16 @@ public class TollBoothClient
                             req = new Request(message);
                             output.println(req.toString());
                             output.flush();
-                            response = input.nextLine();
-                            System.out.println("Received response: " + response);
+
+                            if(input.hasNextLine()) {
+                                response = input.nextLine();
+                                System.out.println("Received response: " + response);
+
+                            }
+                            else
+                            {
+                                System.out.println("Connection to server not found");
+                            }
 
                             break;
 
@@ -156,6 +192,26 @@ public class TollBoothClient
                 else
                 {
                     System.out.println("Please select an option from the menu");
+                }
+            }
+            System.out.println("Checking for unsent events, please wait");
+            if(dataSocket.isConnected())
+            {
+                if(!localEvents.isEmpty())
+                {
+                    for(int i = 0; i <= localEvents.size(); i++) {
+                        message = TollBoothServiceDetails.REGISTER_VEHICLE;
+                        req = new Request(message);
+                        output.println(req.toString());
+                        output.flush();
+
+                        output.println(objectMapper.writeValueAsString(localEvents.get(i)));
+                        output.flush();
+                    }
+                }
+                else
+                {
+                    System.out.println("Nothing to Batch");
                 }
             }
             System.out.println("Thank you for using the Combo service system");

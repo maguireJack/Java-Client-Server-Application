@@ -13,6 +13,7 @@ public class TollBoothServiceDetails
     public static final String GET_REGISTERED_VEHICLES = "GetRegisteredVehicles";
     public static final String REGISTER_VEHICLE = "RegisterVehicle";
     public static final String HEARTBEAT = "Heartbeat";
+    public static final String BATCH = "Batch";
 
     //Response strings
     public static final String UNRECOGNISED = "UNKNOWN_COMMAND";
